@@ -6,164 +6,40 @@ document.getElementById("student").innerHTML = student;
 // ...
 
 
-var arr = [];
-
-arr[0] = {
-
-    surname: "Пономарев",
-    name: "Андрей",
-    family: "Алексеевич",
-    pol: "мужчина",
-    day: 11,
-    month: 12,
-    year: 1980,
-}
-
-arr[1] = {
-
-    surname: "Рыбакова",
-    name: "Алина",
-    family: "Семенова",
-    pol: "женщина",
-    day: 16,
-    month: 04,
-    year: 1974,
-}
-
-arr[2] = {
-
-    surname: "Молчанов",
-    name: "Даниил",
-    family: "Ильич",
-    pol: "мужчина",
-    day: 21,
-    month: 03,
-    year: 1984,
-}
-
-arr[3] = {
-
-    surname: "Смирнова",
-    name: "София",
-    family: "Львовна",
-    pol: "женщина",
-    day: 02,
-    month: 01,
-    year: 1987,
-}
-
-arr[4] = {
-
-    surname: "Владимиров",
-    name: "Артем",
-    family: "Григорьевич",
-    pol: "мужчина",
-    day: 07,
-    month: 12,
-    year: 1990,
-}
-
-arr[5] = {
-
-    surname: "Маслова",
-    name: "Елизавета",
-    family: "Егоровна",
-    pol: "женщина",
-    day: 10,
-    month: 10,
-    year: 1997,
-}
-
-arr[6] = {
-
-    surname: "Назарова",
-    name: "Вера",
-    family: "Романовна",
-    pol: "женщина",
-    day: 01,
-    month: 05,
-    year: 1983,
-}
-
-arr[7] = {
-
-    surname: "Иванов",
-    name: "Иван",
-    family: "Федорович",
-    pol: "мужчина",
-    day: 05,
-    month: 05,
-    year: 1999,
-}
-
-arr[8] = {
-
-    surname: "Дмитриев",
-    name: "Алексей",
-    family: "Григорьевич",
-    pol: "мужчина",
-    day: 12,
-    month: 11,
-    year: 1998,
-}
-
-arr[9] = {
-
-    surname: "Овчинников",
-    name: "Платон",
-    family: "Александрович",
-    pol: "мужчина",
-    day: 26,
-    month: 05,
-    year: 1999,
-}
-
-arr[10] = {
-
-    surname: "Мартынова",
-    name: "Софья",
-    family: "Тимуровна",
-    pol: "женщина",
-    day: 07,
-    month: 06,
-    year: 1995,
-}
-
-arr[11] = {
-
-    surname: "Соколов",
-    name: "Михаил",
-    family: "Адамович",
-    pol: "мужчина",
-    day: 11,
-    month: 03,
-    year: 1979,
-}
-
+const users =[
+    {name: 'Пономарев Андрей Алексеевич', gender: 'М', birth: '11.12.1980'},
+    {name: 'Рыбакова Алина Семёновна', gender: 'Ж', birth: '16.04.1974'},
+    {name: 'Молчанов Даниил Ильич', gender: 'М', birth: '21.03.1984'},
+    {name: 'Смирнова София Львовна', gender: 'Ж', birth: '02.01.1987'},
+    {name: 'Владимиров Артём Григорьевич', gender: 'М', birth: '07.12.1990'},
+    {name: 'Маслова Елизавета Егоровна', gender: 'Ж', birth: '10.10.1997'},
+    {name: 'Назарова Вера Романовна', gender: 'Ж', birth: '01.05.1983'},
+    {name: 'Иванов Иван Фёдорович', gender: 'М', birth: '05.05.1999'},
+    {name: 'Дмитриев Алексей Григорьевич', gender: 'М', birth: '12.11.1998'},
+    {name: 'Овчинников Платон Александрович', gender: 'М', birth: '26.05.1999'},
+    {name: 'Мартынова Софья Тимуровна', gender: 'Ж', birth: '07.06.1995'},
+    {name: 'Соколов Михаил Адамович', gender: 'М', birth: '11.03.1979'}
+]
 
 let countTotal = 0;
 let countMale = 0;
 let countFemale = 0;
 
 let string = "";
-for(let i=0;i<arr.length;i++){
+for(let i=0;i<users.length;i++){
     countTotal++;
-    if(arr[i].pol==="мужчина"){
+    if(users[i].sex==="мужчина"){
         countMale++;
-    } else if(arr[i].pol==="женщина"){
+    } else if(users[i].sex==="женщина"){
         countFemale++;
     }
-    string+=arr[i].surname;
-    string+=" ";
-    string+=arr[i].name[0];
-    string+=".";
-    string+=arr[i].family[0];
-    string+=".";
+    string+=users[i].name;
+    string+=' ';
     string+=" , ";
-    string+=arr[i].pol[0];
+    string+=users[i].gender[0];
     string+=" , ";
     string+="Возраст: ";
-    string+= (2022-arr[i].year);
+    string+= (2022-users[i].year);
 
     string+="\n";
 }
